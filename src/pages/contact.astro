@@ -83,39 +83,3 @@ const { title, description, meta_title, image } = entry.data;
 </Base>
 
 
-
-<script>
-  // フォーム要素を取得
-  const form = document.getElementById('contact-form');
-
-  // フォームの送信イベントリスナーを追加
-  form?.addEventListener('submit', async (event) => {
-      // ブラウザのフォーム送信を防止
-      event.preventDefault();
-
-      // フォームデータを取得
-      const formData = new FormData(form);
-
-      // FormDataオブジェクトをJSONに変換
-      const formDataJson = Object.fromEntries(formData.entries());
-
-      try {
-          // 自作APIへのPOSTリクエストを送信
-          const response = await fetch('/api/contact', {
-              method: 'POST',
-                 // 'Content-Type': 'application/json', を削除
-    body: formData, // JSON文字列化せずにそのまま送信
-          });
-
-          // レスポンスをJSONとして解析
-          const responseData = await response.json();
-
-          // 成功メッセージを表示（または、他の処理を実行）
-          console.log('Success:', responseData);
-      } catch (error) {
-          // エラーを処理
-          console.error('Error:', error);
-      }
-  });
-</script>
-
