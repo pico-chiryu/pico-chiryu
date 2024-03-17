@@ -4,11 +4,13 @@ import Base from "@/layouts/Base.astro";
 import { markdownify } from "@/lib/utils/textConverter";
 import { getEntryBySlug } from "astro:content";
 import { FaAddressCard, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import FeedbackForm from "@/components/FeedbackForm";
 
 const entry = await getEntryBySlug("pages", "contact");
 const { contact_form_action } = config.params;
 const { address, email, phone } = config.contactinfo;
 const { title, description, meta_title, image } = entry.data;
+
 ---
 
 <Base
@@ -19,6 +21,7 @@ const { title, description, meta_title, image } = entry.data;
 >
   <section class="section">
     <div class="container">
+      <FeedbackForm client:load />
       <h1 set:html={markdownify(title)} class="h2 page-heading" />
       <div class="row md:gx-5 gy-5">
         <div class="sm:col-5 md:col-4">
