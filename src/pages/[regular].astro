@@ -5,6 +5,8 @@ import PostSingle from "@/layouts/PostSingle.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import type { TPost } from "@/types";
 
+export const prerender = true;
+
 const getPosts = (await getSinglePage("posts")) as TPost[];
 const postsSlug = getPosts.map((item) => item.slug);
 
