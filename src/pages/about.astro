@@ -18,9 +18,9 @@ const { title, description, meta_title, image, what_i_do } = entry.data;
 >
   <section class="section">
     <div class="container">
-      <FeedbackForm client:load />
+      
       <div class="row md:gx-4">
-        <div class="sm:col-5 md:col-4">
+        <!-- <div class="sm:col-5 md:col-4">
           {
             image && (
               <div class="img-cover mb-8">
@@ -34,16 +34,17 @@ const { title, description, meta_title, image, what_i_do } = entry.data;
               </div>
             )
           }
-        </div>
-        <div class="sm:col-7 md:col-8">
+        </div> -->
+        <div class="">
           <h1 set:html={markdownify(title)} class="h3 mb-8" />
 
           <div class="content">
             <Content />
+            <FeedbackForm client:load />
           </div>
-          <a href="/contact" class="btn btn-primary text-white py-2"
+          <!-- <a href="/contact" class="btn btn-primary text-white py-2"
             >コンタクト2025</a
-          >
+          > -->
         </div>
       </div>
     </div>
