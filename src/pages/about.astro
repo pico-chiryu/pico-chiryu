@@ -36,11 +36,12 @@ const { title, description, meta_title, image, what_i_do } = entry.data;
           }
         </div> -->
         <div class="">
-          <h1 set:html={markdownify(title)} class="h3 mb-8" />
+          <!-- <h1 set:html={markdownify(title)} class="h3 mb-8 text-center" /> -->
+
 
           <div class="content">
             <Content />
-            <FeedbackForm client:load />
+       
           </div>
           <!-- <a href="/contact" class="btn btn-primary text-white py-2"
             >コンタクト2025</a
@@ -53,7 +54,8 @@ const { title, description, meta_title, image, what_i_do } = entry.data;
   <section class="section pt-0">
     <div class="container">
       <h3 class="page-heading mb-20">{what_i_do.title}</h3>
-      <div class="row justify-center gy-4 text-center">
+      <FeedbackForm client:load />
+      <!-- <div class="row justify-center gy-4 text-center">
         {
           what_i_do.items.map((item: any) => (
             <div class="lg:col-4 md:col-6">
@@ -63,7 +65,7 @@ const { title, description, meta_title, image, what_i_do } = entry.data;
             </div>
           ))
         }
-      </div>
+      </div> -->
     </div>
   </section>
 </Base>

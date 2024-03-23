@@ -6,6 +6,11 @@ import Posts from "@/layouts/Posts.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import { sortByDate } from "@/lib/utils/sortFunctions";
 import FeedbackForm from "@/components/FeedbackForm";
+import HeroBanner from '@/layouts/components/HeroBanner.astro';
+import ParentComponent from '@/components/ParentComponent';
+import TestButton from '@/components/TestButton';
+import Slider from '@/components/Slider';
+
 
 const posts = await getSinglePage("posts");
 const sortedPosts = sortByDate(posts);
@@ -16,6 +21,12 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
 <Base>
   <section class="section">
     <div class="container">
+      <Slider client:load />
+      <TestButton client:load/>
+      <ParentComponent client:load />
+
+      <HeroBanner />
+      
 
       <Posts posts={currentPosts} className="mb-16" />
       <Pagination currentPage={1} totalPages={totalPages} />
