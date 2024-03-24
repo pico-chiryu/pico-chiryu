@@ -3,11 +3,11 @@ import nodemailer from 'nodemailer';
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData();
-  const name = data.get("name");
-  const email = data.get("email");
-  const message = data.get("message");
+  const name = data.get("name")?.toString().trim();
+  const email = data.get("email")?.toString().trim();
+  const message = data.get("message")?.toString().trim();
 
-  if (!name || !email || !message) {
+  if (!name || !email ) {
     return new Response(
       JSON.stringify({
         message: "Missing required fields",
