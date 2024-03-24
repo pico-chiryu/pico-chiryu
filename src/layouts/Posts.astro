@@ -6,12 +6,14 @@ import dateFormat from "@/lib/utils/dateFormat";
 import { humanize,slugify } from "@/lib/utils/textConverter";
 import { BiCalendarEdit,BiCategoryAlt } from "react-icons/bi";
 const authors = await getSinglePage("authors");
+console.log(authors);
 const { summary_length } = config.settings;
 const { className, posts, fluid } = Astro.props;
 ---
 
 <div class={`row gy-5 gx-4 ${className} ${posts.length == 1 ? "justify-center" : ""} `}>
   {
+    
     posts.map((post: any, i: number) => (
       <div class={i === 0 && fluid != false ? "col-12" : "col-12 sm:col-6"}>
         {post.data.image && (
@@ -26,7 +28,10 @@ const { className, posts, fluid } = Astro.props;
           </a>
         )}
         <ul class="mt-6 mb-4 flex flex-wrap items-center text-text">
+
+
           <li class="mr-5">
+            
             {authors
               .filter((author) =>
                 post.data.authors
@@ -35,7 +40,7 @@ const { className, posts, fluid } = Astro.props;
               )
               .map((author) => (
                 <a
-                  href={`/authors/${slugify(author.data.title)}`}
+                  href={"/authors"}
                   class="flex items-center hover:text-primary font-medium"
                 >
                   {author.data.image && (
@@ -51,6 +56,9 @@ const { className, posts, fluid } = Astro.props;
                 </a>
               ))}
           </li>
+
+
+          
           <li class="mr-5 flex items-center flex-wrap font-medium">
             <BiCalendarEdit className="mr-1 h-5 w-5 text-gray-600" />
             <>{dateFormat(post.data.date)}</>

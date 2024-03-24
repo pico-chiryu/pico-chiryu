@@ -57,13 +57,7 @@ const Slider: React.FC = () => {
       </div>
     </div>
   );
-}
-
-
-
-
-  // 以前のAppコンポーネントのコード
-;
+};
 
 export default Slider;
 
