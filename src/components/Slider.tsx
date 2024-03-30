@@ -1,5 +1,5 @@
 // Slider.tsx
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
 
@@ -9,10 +9,11 @@ const Slider: React.FC = () => {
     const slides = [
         "/images/author.png",
         "/images/logo.png",
-        "/images/author.png",
+        "/images/main.png",
       ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const slideDuration = 5000; // 5秒ごとにスライドを切り替える
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
@@ -29,6 +30,15 @@ const Slider: React.FC = () => {
   const goToSlide = (slideIndex) => {
     setCurrentIndex(slideIndex);
   };
+
+   // 自動スライド切り替え機能
+   useEffect(() => {
+    const slideInterval = setInterval(() => {
+      nextSlide();
+    }, slideDuration);
+
+    return () => clearInterval(slideInterval);
+  }, [currentIndex]);
 
   return (
     <div className='max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group'>
