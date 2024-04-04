@@ -1,11 +1,11 @@
 {
   "main": [
     {
-      "name": "Home",
+      "name": "トップ",
       "url": "/"
     },
     {
-      "name": "About",
+      "name": "お問い合わせ",
       "url": "/about"
     },
     {

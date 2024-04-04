@@ -10,6 +10,7 @@ import HeroBanner from '@/layouts/components/HeroBanner.astro';
 import ParentComponent from '@/components/ParentComponent';
 import TestButton from '@/components/TestButton';
 import Slider from '@/components/Slider';
+import FixedBottomBanner from "@/components/FixedBottomBanner";
 
 
 const posts = await getSinglePage("posts");
@@ -33,4 +34,6 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
       <Pagination currentPage={1} totalPages={totalPages} />
     </div>
   </section>
+  <FixedBottomBanner />
+  
 </Base>
