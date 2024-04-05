@@ -11,6 +11,7 @@ import ParentComponent from '@/components/ParentComponent';
 import TestButton from '@/components/TestButton';
 import Slider from '@/components/Slider';
 import FixedBottomBanner from "@/components/FixedBottomBanner";
+import NoticeComponent from '@/layouts/components/NoticeComponent.astro';
 
 
 const posts = await getSinglePage("posts");
@@ -22,7 +23,8 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
 <Base>
   <section class="section">
     <div class="container">
-      <HeroBanner />
+      <!-- <HeroBanner /> -->
+      <NoticeComponent />
       <Slider client:load />
       <!-- <TestButton client:load/>
       <ParentComponent client:load /> -->

@@ -7,9 +7,10 @@ const Slider: React.FC = () => {
 
 
     const slides = [
-        "/images/author.png",
-        "/images/logo.png",
-        "/images/main.png",
+        "/images/female.png",
+        "/images/pico_logo.png",
+        "/images/male.png",
+        "/images/pico_logo.png",
       ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

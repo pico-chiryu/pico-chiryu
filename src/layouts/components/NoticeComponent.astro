@@ -1,0 +1,47 @@
+---
+// コンポーネントで使用する変数やデータを定義
+const notices = [
+  {
+    title: "お知らせ1",
+    content: "お知らせの内容1が表示されます。"
+  },
+  {
+    title: "お知らせ2",
+    content: "お知らせの内容2が表示されます。"
+  }
+];
+---
+
+<div class="notice-container">
+  {notices.map((notice) => (
+    <div class="notice-item">
+      <h3 class="notice-title">{notice.title}</h3>
+      <p class="notice-content">{notice.content}</p>
+    </div>
+  ))}
+</div>
+
+<style>
+  .notice-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 4px;
+  }
+
+  .notice-item {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .notice-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .notice-content {
+    font-size: 14px;
+    color: #666;
+  }
+</style>
