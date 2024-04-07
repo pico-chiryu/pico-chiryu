@@ -23,7 +23,7 @@ export default function Form() {
   }
 
   const handleSubmitToServer = async () => {
-    if (!formData.name || !formData.email ) {
+    if (!formData.email ) {
       setResponseMessage('Please fill in all required fields.');
       return;
     }
@@ -188,6 +188,9 @@ export default function Form() {
             className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           >
             <option value="">選択してください</option>
+            <option value="年少">年少</option>
+            <option value="年中">年中</option>
+            <option value="年長">年長</option>
             <option value="小1">小1</option>
             <option value="小2">小2</option>
             <option value="小3">小3</option>
@@ -197,10 +200,10 @@ export default function Form() {
             <option value="中1">中1</option>
             <option value="中2">中2</option>
             <option value="中3">中3</option>
-            <option value="高1">高1</option>
+            {/* <option value="高1">高1</option>
             <option value="高2">高2</option>
             <option value="高3">高3</option>
-            <option value="既卒">既卒</option>
+            <option value="既卒">既卒</option> */}
           </select>
         </div>
       
@@ -292,7 +295,7 @@ export default function Form() {
           className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         >
           <option value="">選択</option>
-          <option value="北海道">北海道</option>
+          <option value="愛知県">愛知県</option>
           {/* 他の都道府県のオプションは省略 */}
         </select>
       </div>
