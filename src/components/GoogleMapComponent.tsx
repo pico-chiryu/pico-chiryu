@@ -14,8 +14,11 @@ const center = {
 
 const GoogleMapComponent = () => {
   return (
-    <div className="container mx-auto p-4 mt-5">
-      <h2 className="text-2xl font-semibold text-center mb-4">教室までの地図</h2>
+    <div className="container mx-auto p-4 mt-5 text-center">
+    <div className="inline-block">
+      <h2 className="text-2xl font-semibold mb-2">教室までの地図</h2>
+      <div className="h-1 bg-customGreen w-full mb-6"></div>
+    </div>
       <LoadScript googleMapsApiKey="AIzaSyAIl5EuEGf-iIhgxAWdz2B18bTsRdkKzX8">
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={16}>
           <Marker

@@ -10,7 +10,12 @@ console.log(authors);
 const { summary_length } = config.settings;
 const { className, posts, fluid } = Astro.props;
 ---
-
+<div class="mb-8">
+  <div class="bg-gray-100 py-4 px-6 mb-4">
+    <h2 class="text-2xl font-bold mb-2">ブログ</h2>
+    <div class="h-1 bg-customGreen mb-4"></div>
+    <p class="text-gray-600">最新情報を更新中！今すぐチェック！</p>
+  </div>
 <div class={`row gy-5 gx-4 ${className} ${posts.length == 1 ? "justify-center" : ""} `}>
   {
     

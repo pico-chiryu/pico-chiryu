@@ -15,6 +15,7 @@ import NoticeComponent from '@/layouts/components/NoticeComponent.astro';
 import GoogleMapComponent from '@/components/GoogleMapComponent';
 
 
+
 const posts = await getSinglePage("posts");
 const sortedPosts = sortByDate(posts);
 const totalPages = Math.ceil(posts.length / config.settings.pagination);
@@ -40,6 +41,7 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
       </div>
     </div>
   </section>
-  <FixedBottomBanner />
+  <FixedBottomBanner id="fixedBottomBanner" />
+  <script type="module" src="/scripts/fixedBannerControl.js"></script>
   
 </Base>
