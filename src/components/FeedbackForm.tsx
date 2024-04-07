@@ -438,7 +438,14 @@ className="inline-flex justify-center py-2 px-4 border border-transparent shadow
 
       {responseMessage && <p className="mt-3 text-sm font-medium text-indigo-600">{responseMessage}</p>}
       {showConfirmation && (
-        <button onClick={handleSubmitToServer}>送信する</button>
+  <div className="text-center mt-4">
+    <button
+      onClick={handleSubmitToServer}
+      className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+    >
+      入力内容を送信する
+    </button>
+  </div>
       )}
     </>
   );

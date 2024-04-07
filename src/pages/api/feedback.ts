@@ -77,7 +77,7 @@ const addressDisplay = filledAddressParts.length > 0 ? filledAddressParts.join('
     <p><b>ご用件:</b> ${inquiry}</p>
     <p><b>お子様の名前:</b> ${childLastName} ${childFirstName}</p>
     <p><b>お子様の名前(カナ):</b> ${childLastNameKana} ${childFirstNameKana}</p>
-    <p><b>お子様の性別:</b> ${childGender}</p>
+    <p><b>お子様の性別:</b> ${childGender === 'male' ? '男性' : childGender === 'female' ? '女性' : '未選択'}</p>
     <p><b>お子様の学年:</b> ${childGrade}</p>
     <p><b>学校種別:</b> ${schoolType}</p>
     <p><b>学校名:</b> ${schoolName}</p>
