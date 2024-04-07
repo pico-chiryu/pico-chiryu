@@ -12,6 +12,7 @@ import TestButton from '@/components/TestButton';
 import Slider from '@/components/Slider';
 import FixedBottomBanner from "@/components/FixedBottomBanner";
 import NoticeComponent from '@/layouts/components/NoticeComponent.astro';
+import GoogleMapComponent from '@/components/GoogleMapComponent';
 
 
 const posts = await getSinglePage("posts");
@@ -24,16 +25,19 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
   <section class="section">
     <div class="container">
       <!-- <HeroBanner /> -->
-      <NoticeComponent />
+    
       <Slider client:load />
       <!-- <TestButton client:load/>
       <ParentComponent client:load /> -->
-
+      <NoticeComponent />
       
       
 
       <Posts posts={currentPosts} className="mb-16" />
       <Pagination currentPage={1} totalPages={totalPages} />
+      <div>
+        <GoogleMapComponent client:load />
+      </div>
     </div>
   </section>
   <FixedBottomBanner />

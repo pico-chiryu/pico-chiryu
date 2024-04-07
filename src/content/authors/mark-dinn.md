@@ -1,5 +1,5 @@
 ---
-title: Mark Dinn
+title: Usami Hideki
 image: /images/authors/mark-dinn.jpg
 description: this is meta description
 social:
@@ -8,4 +8,4 @@ social:
   instagram: https://www.instagram.com/
 ---
 
-lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr navigation et dolore magna aliqua.
+「当塾に通うことが楽しみで、参加しているうちにそろばんの技術が着実に向上していく」と生徒さんに感じてもらえるような指導を心掛けています。
