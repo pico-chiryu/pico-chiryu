@@ -3,15 +3,41 @@ import React, { useState,useEffect } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
 
+
+// スライドを表現する型を定義
+type Slide = {
+  type: 'image' | 'html';
+  content: string; // 画像のURLまたはHTMLコンテンツ
+};
+
 const Slider: React.FC = () => {
-
-
-    const slides = [
-        "/images/female.png",
-        "/images/dammy.jpg",
-        "/images/male.png",
-        "/images/dammy.jpg",
-      ];
+  const slides: Slide[] = [
+    { type: 'image', content: "/images/female.png" },
+    { 
+      type: 'html', 
+      content: `
+        <div class='w-full h-full flex flex-col justify-center items-center' style='background-color: #BEFEE2;'>
+          <p class='text-4xl font-bold text-center' style='color: #005a4c;'>新規開校！</p>
+          <p class='text-xl text-center mt-4' style='color: #005a4c;'>受験に役立つ一生モノの絶対暗算力！</p>
+        </div>
+      ` 
+    },
+    
+    
+    
+    { type: 'image', content: "/images/male.png" },
+    { 
+      type: 'html', 
+      content: `
+        <div class='w-full h-full flex flex-col justify-center items-center' style='background-color: #BEFEE2;'>
+          <p class='text-4xl font-bold text-center' style='color: #005a4c;'>新規開校！</p>
+          <p class='text-xl text-center mt-4' style='color: #005a4c;'>受験に役立つ一生モノの絶対暗算力！</p>
+        </div>
+      ` 
+    },
+    
+    
+  ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const slideDuration = 5000; // 5秒ごとにスライドを切り替える
@@ -41,12 +67,17 @@ const Slider: React.FC = () => {
     return () => clearInterval(slideInterval);
   }, [currentIndex]);
 
+  const renderSlide = (slide: Slide) => {
+    if (slide.type === 'image') {
+      return <div style={{ backgroundImage: `url(${slide.content})` }} className='w-full h-full rounded-2xl bg-center bg-cover duration-500'></div>;
+    } else if (slide.type === 'html') {
+      return <div className='w-full h-full flex justify-center items-center' dangerouslySetInnerHTML={{ __html: slide.content }}></div>;
+    }
+  };
+
   return (
     <div className='max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group'>
-      <div
-        style={{ backgroundImage: `url(${slides[currentIndex]})` }}
-        className='w-full h-full rounded-2xl bg-center bg-cover duration-500'
-      ></div>
+       {renderSlide(slides[currentIndex])}
       {/* Left Arrow */}
       <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
         <BsChevronCompactLeft onClick={prevSlide} size={30} />
