@@ -13,28 +13,21 @@
       "url": "/contact"
     },
     {
-      "name": "Pages",
+      "name": "ページ一覧",
       "url": "",
       "hasChildren": true,
       "children": [
         {
-          "name": "Authors",
+          "name": "塾長紹介",
           "url": "/authors"
         },
+       
         {
-          "name": "Categories",
-          "url": "/categories"
-        },
-        {
-          "name": "Tags",
-          "url": "/tags"
-        },
-        {
-          "name": "Elements",
+          "name": "ごあいさつ",
           "url": "/elements"
         },
         {
-          "name": "Privacy Policy",
+          "name": "プライバシーポリシー",
           "url": "/privacy-policy"
         }
       ]
@@ -42,19 +35,16 @@
   ],
   "footer": [
     {
-      "name": "About",
+      "name": "お問い合わせ",
       "url": "/about"
     },
+    
     {
-      "name": "Contact",
-      "url": "/contact"
-    },
-    {
-      "name": "Elements",
+      "name": "ごあいさつ",
       "url": "/elements"
     },
     {
-      "name": "Privacy Policy",
+      "name": "プライバシーポリシー",
       "url": "/privacy-policy"
     }
   ]

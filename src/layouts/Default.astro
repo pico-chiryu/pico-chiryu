@@ -7,9 +7,17 @@ const { Content } = await data.render();
 ---
 
 <section class="section">
-  <div class="container">
-    <h1 set:html={markdownify(title)} class="h2 page-heading" />
+  <div class="container mt-8">
+    <h1 set:html={markdownify(title)} class="h2 page-heading mb-0" />
     <div class="content">
+      {title === "ごあいさつ" && (
+        <div class="flex justify-center w-1/2 mx-auto">
+       
+          <img src="../../../public/images/usami.png" class="max-w-full h-auto" alt="説明文">
+        </div>
+      )}
+      
+      
       <Content />
     </div>
   </div>

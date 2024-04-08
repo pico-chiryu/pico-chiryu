@@ -1,29 +1,43 @@
 ---
-title: "Privacy"
-description: "this is meta description"
+title: "プライバシーポリシー"
+description: "このページはそろばん塾ピコ 知立校のプライバシーポリシーに関するものです。"
 draft: false
 ---
 
-#### Responsibility of Contributors
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus, donec nunc eros, ullamcorper id feugiat quisque aliquam sagittis. Sem turpis sed viverra massa gravida pharetra. Non dui dolor potenti eu dignissim fusce. Ultrices amet, in curabitur a arcu a lectus morbi id. Iaculis erat sagittis in tortor cursus. Molestie urna eu tortor, erat scelerisque eget. Nunc hendrerit sed interdum lacus. Lorem quis viverra sed
+そろばん塾ピコ 知立校（以下、当塾と明記）では、教育事業運営のため、生徒や保護者の方などの個人情報を必要があればご利用する場合もございます。以下のように個人情報保護方針を定めております。
 
-pretium, aliquam sit. Praesent elementum magna amet, tincidunt eros, nibh in leo. Malesuada purus, lacus, at aliquam suspendisse tempus. Quis tempus amet, velit nascetur sollicitudin. At sollicitudin eget amet in. Eu velit nascetur sollicitudin erhdfvssfvrgss eget viverra nec elementum. Lacus, facilisis tristique lectus in.
+当塾が個人情報を取得する際の利用目的は、次のとおりです。
 
-#### Gathering of Personal Information
+- そろばん教室の経営と管理
+- お問い合わせいただいた方へのそろばん教室のご案内
+- 入塾に際して、手続きを行う場合
+- ご契約内容の確認と更新
+- 出欠席や在籍管理
+- 統計資料などの作成
+- その他、個人情報が必要となる教育サービスの場合
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus, donec nunc eros, ullamcorper id feugiat quisque aliquam sagittis. Sem turpis sed viverra massa gravida pharetra. Non dui dolor potenti eu dignissim fusce. Ultrices amet, in curabitur a arcu a lectus morbi id. Iaculis erat sagittis in tortor cursus. Molestie urna eu tortor, erat scelerisque eget. Nunc hendrerit sed interdum lacus. Lorem quis viverra sed
+当塾は、生徒・保護者の方から頂いた個人情報を厳重な管理体制のもとで保持し、第三者が皆様の個人情報に不当に触れることがないように、合理的な範囲内でセキュリティの強化に努めます。 当塾が保有する個人情報は以下の場合を除き、第三者に開示、提供致しません。
 
-#### Protection of Personal- Information
+- 生徒・保護者の方の同意がある場合
+- 個人を識別することができない場合
+- 生徒・保護者の方または他の第三者の生命、身体又は財産の保護のため、生徒・保護者の方の同意を取ることが困難である場合
+- 法的義務により個人情報の開示が求められた場合
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus, donec nunc eros, ullamcorper id feugiat quisque aliquam sagittis. Sem turpis sed viverra massa gravida pharetra. Non dui dolor potenti eu dignissim fusce. Ultrices amet, in curabitur a arcu a lectus morbi id. Iaculis erat sagittis in tortor cursus.
+個人情報について、開示、訂正、削除等の要請を受けた場合、ご本人であることを確認した上で対応いたします。
 
-Molestie urna eu tortor, erat scelerisque eget. Nunc hendrerit sed interdum lacus. Lorem quis viverra sed
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus, donec nunc eros, ullamcorper id feugiat
+公開日：2010年11月1日
 
-#### Privacy Policy Changes
+そろばん塾ピコ　知立校
 
-1. Sll the Themefisher items are designed to be with the latest , We check all
-2. comments that threaten or harm the reputation of any person or organization
-3. personal information including, but limited to, email addresses, telephone numbers
-4. Any Update come in The technology Customer will get automatic Notification.
+塾長 宇佐美
+
+## 貢献者の責任
+
+そろばん塾ピコ 知立校では、教育事業を通じて生徒や保護者の皆様から信頼される情報管理を心掛けています。当塾に関わる全ての関係者は、個人情報の重要性を理解し、適切な保護措置を講じることを責任としています。個人情報の取扱いに関しては、以下の方針に従い、慎重な管理を行います。
+
+- 生徒や保護者から頂いた情報は、教育サービスの提供や塾運営の目的以外には使用しません。
+- 必要な情報のみを収集し、目的達成後は適切に処理します。
+- 生徒や保護者の同意なく個人情報を第三者に開示または提供することはありません（法的義務を除く）。
+
+責任を持って個人情報の保護に努め、塾生やその保護者の信頼に応える塾運営を目指します。

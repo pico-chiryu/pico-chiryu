@@ -8,10 +8,13 @@ export default function Form() {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitted, setIsSubmitted] = useState(false); // 新しい状態を追加
-
+ 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  }
+    // 入力要素がチェックボックスの場合は、e.target.checkedを使用して状態を更新
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+    setFormData({ ...formData, [e.target.name]: value });
+  };
+  
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -294,7 +297,7 @@ export default function Form() {
           onChange={handleInputChange}
           className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
         >
-          <option value="">選択</option>
+          {/* <option value="">選択</option> */}
           <option value="愛知県">愛知県</option>
           {/* 他の都道府県のオプションは省略 */}
         </select>
@@ -371,74 +374,49 @@ export default function Form() {
   </div>
 
   <div className="mb-6">
-    <label htmlFor="emailConfirmation" className="block text-sm font-medium text-gray-700">
-      メールアドレス（確認用） <span className="bg-orange-500 text-white px-1.5 py-0.5 rounded font-semibold text-xs">必須</span>
-    </label>
+  <p className="text-sm text-gray-900">
+    個人情報の取り扱い <span className="bg-orange-500 text-white px-1.5 py-0.5 rounded font-semibold text-xs">必須</span>
+  </p>
+  <p className="mt-2 text-sm text-gray-500 mb-4">
+    個人情報の取り扱いに同意される方はチェックしてください。個人情報の取り扱いについては
+    <a href="/privacy-policy" className="font-medium text-indigo-600 hover:text-indigo-500">
+      こちら
+    </a>
+    をご確認ください。
+  </p>
+  <div className="flex items-center">
     <input
-      type="email"
-      id="emailConfirmation"
-      name="emailConfirmation"
-      value={formData.emailConfirmation}
+      id="privacyPolicy"
+      name="privacyPolicy"
+      type="checkbox"
+      checked={formData.privacyPolicy}
       onChange={handleInputChange}
-      autoComplete="email"
       required
-      className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+      className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-900 rounded mr-2"
     />
-  </div>
-
-  <div className="mb-6">
-    <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-      相談内容・ご質問
+    <label htmlFor="privacyPolicy" className="block text-sm text-gray-900">
+      同意する
     </label>
-    <p className="mt-1 text-sm text-gray-500">
-      相談したい内容・ご質問などございましたらご入力ください。
-      なお、２営業日以内に担当者よりお電話で確認のご連絡をさせていただきますが、ご都合の悪い時間帯等ございましたら、併せてご記入ください。
-    </p>
-    <textarea
-      id="message"
-      name="message"
-      value={formData.message}
-      onChange={handleInputChange}
-      className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
-    />
   </div>
-
-  <div className="mb-6">
-    <div className="flex items-center">
-      <input
-        id="privacyPolicy"
-        name="privacyPolicy"
-        type="checkbox"
-        checked={formData.privacyPolicy}
-        onChange={handleInputChange}
-        required
-        className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
-      />
-      <label htmlFor="privacyPolicy" className="ml-2 block text-sm text-gray-900">
-        個人情報の取り扱い <span className="bg-orange-500 text-white px-1.5 py-0.5 rounded font-semibold text-xs">必須</span>
-      </label>
-    </div>
-    <p className="mt-2 text-sm text-gray-500">
-個人情報の取り扱いについては<a
-     href="#"
-     className="font-medium text-indigo-600 hover:text-indigo-500"
-   >
-こちら
-</a>
-をご確認ください。
-</p>
-
 </div>
-<button
-type="submit"
-className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
-確認画面へ
-</button> </form>
+
+
+
+
+
+<div className="flex justify-center mb-4">
+  <button
+    type="submit"
+    className="inline-flex justify-center py-2 px-4 mb-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-primary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+    確認画面へ
+  </button>
+</div>
+</form>
       )}
 
       {responseMessage && <p className="mt-3 text-sm font-medium text-indigo-600">{responseMessage}</p>}
       {showConfirmation && (
-  <div className="text-center mt-4">
+  <div className="text-center mt-4 mb-8">
     <button
       onClick={handleSubmitToServer}
       className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
