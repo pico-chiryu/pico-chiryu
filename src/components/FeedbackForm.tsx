@@ -8,6 +8,8 @@ export default function Form() {
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitted, setIsSubmitted] = useState(false); // 新しい状態を追加
+  const [isLoading, setIsLoading] = useState(false);
+
  
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     // 入力要素がチェックボックスの場合は、e.target.checkedを使用して状態を更新
@@ -26,6 +28,12 @@ export default function Form() {
   }
 
   const handleSubmitToServer = async () => {
+    setIsLoading(true); // 送信開始時にローディング状態をtrueに
+
+   
+
+ try {
+    // ここでフォームデータの送信処理を実装...
     if (!formData.email ) {
       setResponseMessage('Please fill in all required fields.');
       return;
@@ -35,7 +43,6 @@ export default function Form() {
     for (const [key, value] of Object.entries(formData)) {
       formDataToSend.append(key, value);
     }
-
     const response = await fetch("/api/feedback", {
       method: "POST",
       body: formDataToSend,
@@ -44,17 +51,23 @@ export default function Form() {
     const data = await response.json();
     if (data.message === "送信に成功しました！") {
       console.log("送信に成功しました！");
-
       window.location.href = '/thank-you'; // 「ありがとうございました」ページにリダイレクト
-      setResponseMessage(data.message);
-      // setIsSubmitted(true); 
     } else {
       setResponseMessage(data.message);
     }
+  } catch (error) {
+    // エラーハンドリング...
+    setResponseMessage('送信中にエラーが発生しました。もう一度試してください。');
+  } finally {
+    setIsLoading(false); // 送信処理が完了したらローディング状態を無効にします。
   }
+}
 
   return (
     <>
+     {isLoading && (
+      <div>Loading...</div> // ここにローディングインジケータを表示
+    )}
       {showConfirmation ? (
         <ConfirmationPage formData={formData} onGoBack={handleGoBack} />
       ) : isSubmitted ? ( // 送信が成功した場合の表示
