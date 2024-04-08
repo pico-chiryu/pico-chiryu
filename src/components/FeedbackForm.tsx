@@ -42,9 +42,12 @@ export default function Form() {
     });
 
     const data = await response.json();
-    if (data.message === "Success!") {
+    if (data.message === "送信に成功しました！") {
+      console.log("送信に成功しました！");
+
+      window.location.href = '/thank-you'; // 「ありがとうございました」ページにリダイレクト
       setResponseMessage(data.message);
-      setIsSubmitted(true); // 送信が成功したら状態を変更
+      // setIsSubmitted(true); 
     } else {
       setResponseMessage(data.message);
     }
