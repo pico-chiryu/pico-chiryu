@@ -374,6 +374,39 @@ export default function Form() {
   </div>
 
   <div className="mb-6">
+    <label htmlFor="emailConfirmation" className="block text-sm font-medium text-gray-700">
+      メールアドレス（確認用） <span className="bg-orange-500 text-white px-1.5 py-0.5 rounded font-semibold text-xs">必須</span>
+    </label>
+    <input
+      type="email"
+      id="emailConfirmation"
+      name="emailConfirmation"
+      value={formData.emailConfirmation}
+      onChange={handleInputChange}
+      autoComplete="email"
+      required
+      className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+    />
+  </div>
+
+  <div className="mb-6">
+    <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+      相談内容・ご質問
+    </label>
+    <p className="mt-1 text-sm text-gray-500">
+      相談したい内容・ご質問などございましたらご入力ください。
+      なお、２営業日以内に担当者よりお電話で確認のご連絡をさせていただきますが、ご都合の悪い時間帯等ございましたら、併せてご記入ください。
+    </p>
+    <textarea
+      id="message"
+      name="message"
+      value={formData.message}
+      onChange={handleInputChange}
+      className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+    />
+  </div>
+
+  <div className="mb-6">
   <p className="text-sm text-gray-900">
     個人情報の取り扱い <span className="bg-orange-500 text-white px-1.5 py-0.5 rounded font-semibold text-xs">必須</span>
   </p>
@@ -399,11 +432,6 @@ export default function Form() {
     </label>
   </div>
 </div>
-
-
-
-
-
 <div className="flex justify-center mb-4">
   <button
     type="submit"
