@@ -2,6 +2,7 @@ import { useState } from "react";
 import React from 'react';
 import type { FormEvent } from 'react';
 import ConfirmationPage from './ConfirmationPage';
+import LoadingIndicator from './LoadingIndicator'; // 正しいパスに修正してください
 
 export default function Form() {
   const [responseMessage, setResponseMessage] = useState("");
@@ -29,20 +30,21 @@ export default function Form() {
 
   const handleSubmitToServer = async () => {
     setIsLoading(true); // 送信開始時にローディング状態をtrueに
+    setShowConfirmation(false); // 送信ボタンを非表示に
 
    
 
  try {
-    // ここでフォームデータの送信処理を実装...
-    if (!formData.email ) {
-      setResponseMessage('Please fill in all required fields.');
-      return;
-    }
+  if (!formData.email ) {
+    setResponseMessage('Please fill in all required fields.');
+    return;
+  }
 
-    const formDataToSend = new FormData();
-    for (const [key, value] of Object.entries(formData)) {
-      formDataToSend.append(key, value);
-    }
+  const formDataToSend = new FormData();
+  for (const [key, value] of Object.entries(formData)) {
+    formDataToSend.append(key, value);
+  }
+    // ここでフォームデータの送信処理を実装...
     const response = await fetch("/api/feedback", {
       method: "POST",
       body: formDataToSend,
@@ -65,9 +67,7 @@ export default function Form() {
 
   return (
     <>
-     {isLoading && (
-      <div>Loading...</div> // ここにローディングインジケータを表示
-    )}
+ 
       {showConfirmation ? (
         <ConfirmationPage formData={formData} onGoBack={handleGoBack} />
       ) : isSubmitted ? ( // 送信が成功した場合の表示
@@ -469,6 +469,7 @@ export default function Form() {
     </button>
   </div>
       )}
+      <LoadingIndicator isLoading={isLoading} />
     </>
   );
 }
