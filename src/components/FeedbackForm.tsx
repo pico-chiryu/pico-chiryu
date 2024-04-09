@@ -66,6 +66,14 @@ export default function Form() {
 }
 
   return (
+
+    <>
+    {isLoading ? (
+      // ローディング状態の場合、ローディングインジケーターのみを表示
+      <LoadingIndicator isLoading={isLoading} />
+    ) : (
+
+
     <>
  
       {showConfirmation ? (
@@ -469,7 +477,9 @@ export default function Form() {
     </button>
   </div>
       )}
-      <LoadingIndicator isLoading={isLoading} />
+
+</>
+    )}
     </>
   );
 }
