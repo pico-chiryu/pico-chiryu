@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "usami Astro | Blog Template",
+    "title": "Soroban Pico Chiryu | official website",
     "base_url": "https://usami-astro.vercel.app/",
     "base_path": "/",
     "trailing_slash": false,
@@ -8,7 +8,7 @@
     "logo": "/images/logo.png",
     "logo_width": "200",
     "logo_height": "34",
-    "logo_text": "Bookworm Light"
+    "logo_text": "Pico Chiryu"
   },
 
   "settings": {
@@ -19,7 +19,7 @@
   "metadata": {
     "meta_author": "Themefisher",
     "meta_image": "/images/og-image.png",
-    "meta_description": "Bookworm Light Astro Blog Template"
+    "meta_description": "そろばん塾のホームページです"
   },
 
   "params": {
