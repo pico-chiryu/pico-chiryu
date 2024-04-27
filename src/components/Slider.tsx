@@ -30,8 +30,8 @@ const Slider: React.FC = () => {
       type: 'html', 
       content: `
         <div class='w-full h-full flex flex-col justify-center items-center' style='background-color: #BEFEE2;'>
-          <p class='text-4xl font-bold text-center' style='color: #005a4c;'>新規開校！</p>
-          <p class='text-xl text-center mt-4' style='color: #005a4c;'>受験に役立つ一生モノの絶対暗算力！</p>
+          <p class='text-4xl font-bold text-center' style='color: #005a4c;'>無料体験受付中！</p>
+          <p class='text-xl text-center mt-4' style='color: #005a4c;'>生涯役立つ右脳教育！</p>
         </div>
       ` 
     },
