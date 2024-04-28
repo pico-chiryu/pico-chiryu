@@ -13,6 +13,7 @@ import Slider from '@/components/Slider';
 import FixedBottomBanner from "@/components/FixedBottomBanner";
 import NoticeComponent from '@/layouts/components/NoticeComponent.astro';
 import GoogleMapComponent from '@/components/GoogleMapComponent';
+import Form from '@/components/Form';
 
 
 
@@ -41,6 +42,8 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
       </div>
     </div>
   </section>
+
+  
   
   <FixedBottomBanner id="fixedBottomBanner" />
   <script type="module" src="/scripts/fixedBannerControl.js"></script>
