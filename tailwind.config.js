@@ -38,6 +38,10 @@ module.exports = {
       padding: "2rem",
     },
     extend: {
+      
+      animation: {
+        'slow-bounce': 'bounce 2s ease-in-out infinite',
+      },
       colors: {
         text: theme.colors.default.text_color.default,
         light: theme.colors.default.text_color.light,

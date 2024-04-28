@@ -15,13 +15,22 @@
       "hasChildren": true,
       "children": [
         {
+          "name": "ごあいさつ",
+          "url": "/elements"
+        },
+        {
           "name": "塾長紹介",
           "url": "/authors"
         },
        
+       
         {
-          "name": "ごあいさつ",
-          "url": "/elements"
+          "name": "ブログ",
+          "url": "/blog"
+        },
+        {
+          "name": "イマドキの学習法！「右脳暗算」が熱い！",
+          "url": "/features"
         },
         {
           "name": "プライバシーポリシー",
