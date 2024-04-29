@@ -6,7 +6,7 @@
     },
     {
       "name": "お問い合わせ",
-      "url": "/about"
+      "url": "/contact-form"
     },
     
     {
@@ -42,7 +42,7 @@
   "footer": [
     {
       "name": "お問い合わせ",
-      "url": "/about"
+      "url": "/contact-form"
     },
     
     {

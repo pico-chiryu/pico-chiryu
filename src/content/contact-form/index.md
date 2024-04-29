@@ -1,6 +1,6 @@
 ---
 title: "お問い合わせフォーム"
-meta_title: "About"
+meta_title: "Contact_Form"
 image: "/images/author.png"
 draft: false
 
