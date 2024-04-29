@@ -41,6 +41,7 @@ module.exports = {
       
       animation: {
         'slow-bounce': 'bounce 2s ease-in-out infinite',
+        'spin-slow': 'spin 3s linear infinite',
       },
       colors: {
         text: theme.colors.default.text_color.default,
