@@ -3,7 +3,6 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import TWEEN from "@tweenjs/tween.js";
 
-
 function Canvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
@@ -13,31 +12,19 @@ function Canvas() {
     if (!canvasRef.current) return;
 
     const canvas = canvasRef.current;
-    const sizes = {
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
+    const container = canvas.parentElement;
 
     // Scene
     const scene = new THREE.Scene();
     sceneRef.current = scene;
 
     // Camera
-    const camera: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(
-      75,
-      sizes.width / sizes.height,
-      0.1,
-      1000
-    );
+    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
     camera.position.z = 5;
 
     // Renderer
-    const renderer = new THREE.WebGLRenderer({
-      canvas: canvas,
-      antialias: true,
-      alpha: true,
-    });
-    renderer.setSize(sizes.width, sizes.height);
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
 
     // Lights
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
@@ -68,11 +55,7 @@ function Canvas() {
         const box = new THREE.Box3().setFromObject(model);
         const center = box.getCenter(new THREE.Vector3());
         camera.lookAt(center);
-        camera.position.set(
-          center.x,
-          center.y,
-          box.getSize(new THREE.Vector3()).length() * 1.5
-        );
+        camera.position.set(center.x, center.y, box.getSize(new THREE.Vector3()).length() * 1.5);
       },
       undefined,
       (error) => {
@@ -113,37 +96,41 @@ function Canvas() {
       requestAnimationFrame(tick);
     };
 
-    const onResize = () => {
-      sizes.width = window.innerWidth;
-      sizes.height = window.innerHeight;
-      camera.aspect = sizes.width / sizes.height;
+    const resizeCanvas = () => {
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      renderer.setSize(width, height);
+      camera.aspect = width / height;
       camera.updateProjectionMatrix();
-      renderer.setSize(sizes.width, sizes.height);
     };
 
-    window.addEventListener("resize", onResize);
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
 
     tick();
 
     // Clean up on component unmount
     return () => {
-      window.removeEventListener("resize", onResize);
+      window.removeEventListener("resize", resizeCanvas);
       renderer.dispose();
     };
   }, []);
 
-  return <canvas
-  ref={canvasRef}
-  style={{
-    width: "100%",
-    height: "100vh",
-    background: "#8BDBC0",
-    background: "linear-gradient(126deg, #8BDBC0 0%, #4DA890 50%, #1E6B5A 96%)",
-    position: "relative",
-    top: 0,
-    left: 0,
-  }}
-/>;
+  return (
+    <div style={{ width: "100%", height: "0", paddingBottom: "56.25%", position: "relative" }}>
+      <canvas
+        ref={canvasRef}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+        }}
+      />
+    </div>
+  );
 }
 
 export default Canvas;
