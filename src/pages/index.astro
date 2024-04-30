@@ -14,6 +14,7 @@ import FixedBottomBanner from "@/components/FixedBottomBanner";
 import NoticeComponent from '@/layouts/components/NoticeComponent.astro';
 import GoogleMapComponent from '@/components/GoogleMapComponent';
 import Form from '@/components/Form';
+import Canvas from '@/components/Canvas';
 
 
 
@@ -27,6 +28,7 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
   <section class="section">
     <div class="container">
       <!-- <HeroBanner /> -->
+      <Canvas />
     
       <Slider client:load />
       <!-- <TestButton client:load/>
