@@ -118,17 +118,40 @@ function Canvas() {
   }, []);
 
   return (
-    <div style={{ width: "100%", height: "0", paddingBottom: "56.25%", position: "relative" }}>
-      <canvas
-        ref={canvasRef}
+  
+    <div style={{ position: "relative", width: "100%", height: "100vh" }}>
+      <canvas ref={canvasRef} style={{ position: "absolute", zIndex: 0 }} />
+      <div
         style={{
           position: "absolute",
+          zIndex: 1,
           top: 0,
           left: 0,
           width: "100%",
           height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
+          color: "#CE6363",
         }}
-      />
+      >
+        <h3
+          style={{
+            margin: 0,
+            fontSize: "3rem",
+            fontWeight: "bold",
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
+            color:"#D06364"
+          }}
+        >
+          新規開校！
+        </h3>
+        <p style={{ fontSize: "1.5rem", marginTop: "11rem", color:"#D1B2B8" }}>
+          受験に役立つ一生モノの絶対暗算力！
+        </p>
+      </div>
     </div>
   );
 }
