@@ -149,7 +149,7 @@ function Canvas() {
     <p className="text-2xl mb-6">
       受験に役立つ一生モノの絶対暗算力！
     </p>
-    <div style={{ position: "absolute", bottom: "50px", zIndex: 2 }}>
+    <div style={{ position: "absolute", top: "80px", zIndex: 1.5 }}>
       <a
         href="/contact-form"
         className="bg-[#01AD9F] text-white px-6 py-3 rounded-full shadow-md font-semibold hover:bg-[#018E82] transition-colors duration-200"
