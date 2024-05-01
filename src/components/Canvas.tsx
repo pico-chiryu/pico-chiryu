@@ -119,7 +119,7 @@ function Canvas() {
  }, []);
 
  return (
-<div style={{ position: "relative", width: "100%", height: "90vh" }}>
+<div style={{ position: "relative", width: "100%", height: "80vh" }}>
   <canvas ref={canvasRef} style={{ position: "absolute", zIndex: 0 }} />
   <div
     style={{
