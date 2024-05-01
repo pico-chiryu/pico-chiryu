@@ -6,8 +6,8 @@ const FixedBottomBanner = () => {
       <div className="text-white font-semibold">
         無料体験・資料請求はこちら
       </div>
-      <a href="/about" legacyBehavior>
-        <a href="/about" className="bg-white text-primary px-4 py-2 rounded-md shadow-sm font-semibold hover:bg-gray-100 transition-colors duration-200">
+      <a href="/contact-form" legacyBehavior>
+        <a href="/contact-form" className="bg-white text-primary px-4 py-2 rounded-md shadow-sm font-semibold hover:bg-gray-100 transition-colors duration-200">
           無料で申し込む
         </a>
       </a>
