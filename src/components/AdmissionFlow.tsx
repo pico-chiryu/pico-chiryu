@@ -13,12 +13,21 @@ const AdmissionFlow = () => {
   <div className="h-1 bg-customGreen mb-4"></div>
   <VerticalTimeline>
   <VerticalTimelineElement
-    className="vertical-timeline-element--work"
-    contentStyle={{ background: '#01AD9F', color: '#fff' }}
-    contentArrowStyle={{ borderRight: '7px solid #01AD9F' }}
-    iconStyle={{ background: '#01AD9F', color: '#fff' }}
-    visible={true}
-  >
+      className="vertical-timeline-element--work"
+      contentStyle={{ background: '#01AD9F', color: '#fff' }}
+      contentArrowStyle={{ borderRight: '7px solid #01AD9F' }}
+      iconStyle={{ background: '#01AD9F', color: '#fff' }}
+      visible={true}
+      icon={
+        <div className="flex justify-center items-center w-full h-full">
+          <img
+            src="/images/piyo.png"
+            alt="Icon"
+            className="w-10 h-10 object-cover"
+          />
+        </div>
+      }
+    >
     <h3 className="vertical-timeline-element-title text-white text-xl font-bold mb-2">STEP1 無料体験の予約</h3>
     <p className="text-white">
       お電話またはWebから無料体験の予約をお取りください。ご都合の良い曜日と時間帯を選択できます。
@@ -31,6 +40,15 @@ const AdmissionFlow = () => {
     contentArrowStyle={{ borderRight: '7px solid #01AD9F' }}
     iconStyle={{ background: '#01AD9F', color: '#fff' }}
     visible={true}
+    icon={
+      <div className="flex justify-center items-center w-full h-full">
+        <img
+          src="/images/piyo.png"
+          alt="Icon"
+          className="w-10 h-10 object-cover"
+        />
+      </div>
+    }
   >
     <h3 className="vertical-timeline-element-title text-white text-xl font-bold mb-2">STEP2 無料体験授業</h3>
     <p className="text-white">
@@ -44,6 +62,15 @@ const AdmissionFlow = () => {
     contentArrowStyle={{ borderRight: '7px solid #01AD9F' }}
     iconStyle={{ background: '#01AD9F', color: '#fff' }}
     visible={true}
+    icon={
+      <div className="flex justify-center items-center w-full h-full">
+        <img
+          src="/images/piyo.png"
+          alt="Icon"
+          className="w-10 h-10 object-cover"
+        />
+      </div>
+    }
   >
     <h3 className="vertical-timeline-element-title text-white text-xl font-bold mb-2">STEP3 入塾の手続き</h3>
     <p className="text-white">

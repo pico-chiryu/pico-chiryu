@@ -38,7 +38,7 @@ const GoogleMapComponent = () => {
           駅から徒歩５分。「中町」交差点すぐ、県道５１号線沿いになります。
         </p>
         <br />
-        <p className="text-xl">電話番号: 080-4306-4119</p>
+        <p className="text-sm">電話番号: 080-4306-4119</p>
         <br />
         <p className="text-sm">受付時間: 13:30~21:00 (日曜・祝日、毎月29日~31日を除く)</p>
         <br />
