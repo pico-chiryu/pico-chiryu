@@ -1,17 +1,10 @@
 ---
-// ここに必要なJavaScriptやAstroコンポーネントをインポートします。
 import Base from "@/layouts/Base.astro";
+import ThanksCanvas from "@/components/ThanksCanvas";
 ---
 
-<Base>
-  <section class="section">
-    <div class="container text-center mt-20">
-      <h1 class="text-xl font-bold my-4">ありがとうございました！</h1>
-      <p class="mb-12">お問い合わせいただき、誠にありがとうございます。
-        <br />
-        確認後、担当者よりご連絡いたします。</p>
-      <a href="/" class="text-indigo-600 hover:text-indigo-800">トップページに戻る</a>
-    </div>
-  </section>
+<Base title="Home">
+  <ThanksCanvas client:only="react" />
 </Base>
+
 

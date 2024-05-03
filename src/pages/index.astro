@@ -17,9 +17,14 @@ import Form from '@/components/Form';
 import Canvas from '@/components/Canvas';
 import AdmissionFlow from '@/components/AdmissionFlow';
 import Greeting from '@/components/Greeting';
+// import { Canvas } from '@react-three/fiber';
+// import { Suspense } from 'react';
+// import Island from '@/components/Island.jsx';
 
 
 
+
+// ...
 const posts = await getSinglePage("posts");
 const sortedPosts = sortByDate(posts);
 const totalPages = Math.ceil(posts.length / config.settings.pagination);
@@ -30,6 +35,14 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
   <section class="section">
     <div class="container">
       <!-- <HeroBanner /> -->
+      <!-- <Canvas>
+        <Suspense fallback={null}>
+          <Island 
+            position={[0, 0, 0]}
+            client:only="react"
+          />
+        </Suspense>
+      </Canvas> -->
       <Canvas client:only="react" />
     
       <!-- <Slider client:load /> -->
@@ -38,6 +51,7 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
       <NoticeComponent />
       <AdmissionFlow />
       <Greeting />
+
 
    
       
