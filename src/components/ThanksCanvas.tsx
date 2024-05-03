@@ -63,7 +63,7 @@ function Canvas() {
 
         // Position the text elements
         const topTextPosition = new THREE.Vector3(0, box.max.y + 0.5, 0);
-        const bottomTextPosition = new THREE.Vector3(0, box.min.y - 1, 0); // Lowered position
+        const bottomTextPosition = new THREE.Vector3(0, box.min.y - 1, 0);
         positionTextElement(textElement.querySelector(".top-text"), topTextPosition);
         positionTextElement(textElement.querySelector(".bottom-text"), bottomTextPosition);
       },
@@ -98,11 +98,12 @@ function Canvas() {
 
     const positionTextElement = (element, position) => {
       const vector = position.clone().project(camera);
-      const x = (vector.x + 1) / 2 * canvas.width;
-      const y = -(vector.y - 1) / 2 * canvas.height;
+      const x = (vector.x + 1) / 2;
+      const y = -(vector.y - 1) / 2;
 
-      element.style.left = `${x - element.offsetWidth / 2}px`;
-      element.style.top = `${y}px`;
+      element.style.left = `${(x * 100).toFixed(2)}%`;
+      element.style.top = `${((y - 0.01) * 100).toFixed(2)}%`;
+      element.style.transform = `translate(-50%, 0%)`;
     };
 
     resizeCanvas();
