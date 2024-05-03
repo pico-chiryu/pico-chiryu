@@ -6,12 +6,14 @@ function Canvas() {
   const canvasRef = useRef(null);
   const sceneRef = useRef(null);
   const modelRef = useRef(null);
+  const textRef = useRef(null);
 
   useEffect(() => {
-    if (!canvasRef.current) return;
+    if (!canvasRef.current || !textRef.current) return;
 
     const canvas = canvasRef.current;
     const container = canvas.parentElement;
+    const textElement = textRef.current;
 
     // Scene
     const scene = new THREE.Scene();
@@ -58,6 +60,12 @@ function Canvas() {
 
         camera.lookAt(model.position);
         camera.position.set(center.x, center.y, box.getSize(new THREE.Vector3()).length() * 1.5);
+
+        // Position the text elements
+        const topTextPosition = new THREE.Vector3(0, box.max.y + 0.5, 0);
+        const bottomTextPosition = new THREE.Vector3(0, box.min.y - 1, 0); // Lowered position
+        positionTextElement(textElement.querySelector(".top-text"), topTextPosition);
+        positionTextElement(textElement.querySelector(".bottom-text"), bottomTextPosition);
       },
       undefined,
       (error) => {
@@ -88,6 +96,15 @@ function Canvas() {
       camera.updateProjectionMatrix();
     };
 
+    const positionTextElement = (element, position) => {
+      const vector = position.clone().project(camera);
+      const x = (vector.x + 1) / 2 * canvas.width;
+      const y = -(vector.y - 1) / 2 * canvas.height;
+
+      element.style.left = `${x - element.offsetWidth / 2}px`;
+      element.style.top = `${y}px`;
+    };
+
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
@@ -104,36 +121,28 @@ function Canvas() {
     <div style={{ position: "relative", width: "100%", height: "80vh" }}>
       <canvas ref={canvasRef} style={{ position: "absolute", zIndex: 0 }} />
       <div
+        ref={textRef}
         style={{
           position: "absolute",
-          zIndex: 1,
           top: 0,
           left: 0,
           width: "100%",
           height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          textAlign: "center",
-          color: "#01AD9F",
         }}
       >
-        <section className="section">
-          <div className="container text-center mt-20">
-            <h1 className="text-xl font-bold my-4">ありがとうございました！</h1>
-            <p className="mb-12">
-              お問い合わせいただき、誠にありがとうございます。
-              <br />
-              確認後、担当者よりご連絡いたします。
-            </p>
-            <div style={{ marginTop: "2rem" }}>
-              <a href="/" className="text-indigo-600 hover:text-indigo-800">
-                トップページに戻る
-              </a>
-            </div>
-          </div>
-        </section>
+        <div className="top-text" style={{ position: "absolute", color: "#215364", textAlign: "center" }}>
+          <h1 className="text-xl font-bold my-4">ありがとうございました！</h1>
+          <p className="mb-12">
+            お問い合わせいただき、誠にありがとうございます。
+            <br />
+            確認後、担当者よりご連絡いたします。
+          </p>
+        </div>
+        <div className="bottom-text" style={{ position: "absolute", textAlign: "center", fontSize: "1.2rem" }}>
+          <a href="/" className="text-indigo-600 hover:text-indigo-800">
+            トップページに戻る
+          </a>
+        </div>
       </div>
     </div>
   );
