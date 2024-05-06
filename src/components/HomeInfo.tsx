@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-// import { arrow } from "../assets/icons";
+const arrow = "/icons/arrow.svg";
 
 const HomeInfo = ({ currentStage }) => {
   if (currentStage === 0)
