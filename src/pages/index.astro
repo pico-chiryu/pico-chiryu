@@ -17,9 +17,8 @@ import Form from '@/components/Form';
 import Canvas from '@/components/Canvas';
 import AdmissionFlow from '@/components/AdmissionFlow';
 import Greeting from '@/components/Greeting';
-// import { Canvas } from '@react-three/fiber';
-// import { Suspense } from 'react';
-// import Island from '@/components/Island.jsx';
+import Home from '@/components/Home';
+
 
 
 
@@ -44,6 +43,7 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
         </Suspense>
       </Canvas> -->
       <Canvas client:only="react" />
+      <Home client:only="react" />
     
       <!-- <Slider client:load /> -->
       <!-- <TestButton client:load/>
