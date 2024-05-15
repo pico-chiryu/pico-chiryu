@@ -119,18 +119,18 @@ function Canvas() {
   }, []);
 
   return (
-    <div style={{ position: "relative", width: "100%", height: "80vh" }}>
-      <canvas ref={canvasRef} style={{ position: "absolute", zIndex: 0 }} />
-      <div
-        ref={textRef}
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-        }}
-      >
+    // <div style={{ position: "relative", width: "100%", height: "80vh" }}>
+    //   <canvas ref={canvasRef} style={{ position: "absolute", zIndex: 0 }} />
+    //   <div
+    //     ref={textRef}
+    //     style={{
+    //       position: "absolute",
+    //       top: 0,
+    //       left: 0,
+    //       width: "100%",
+    //       height: "100%",
+    //     }}
+    //   >
         <div className="top-text" style={{ position: "absolute", color: "#215364", textAlign: "center" }}>
           <h1 className="text-xl font-bold my-4">ありがとうございました！</h1>
           <p className="mb-12">
