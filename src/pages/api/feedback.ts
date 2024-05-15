@@ -39,8 +39,8 @@ export const POST: APIRoute = async ({ request }) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'snj.hirato@gmail.com', // 実際のメールアドレスに置き換えてください
-      pass: 'qtrzhpsylkearbsg', // 実際のアプリパスワードに置き換えてください
+      user: 'soroban.chiryu@gmail.com', // 実際のメールアドレスに置き換えてください
+      pass: 'qyyqohplpwtsepxo', // 実際のアプリパスワードに置き換えてください
     },
   });
 
@@ -53,8 +53,8 @@ const addressDisplay = filledAddressParts.length > 0 ? filledAddressParts.join('
 
   // メールオプションの設定
   const mailOptions = {
-    from: 'snj.hirato@gmail.com', // 送信元のメールアドレス
-    to: 'snj.hirato@gmail.com', // 送信先のメールアドレス
+    from: 'soroban.chiryu@gmail.com', // 送信元のメールアドレス
+    to: 'soroban.chiryu@gmail.com', // 送信先のメールアドレス
     subject: '新しいお問い合わせメッセージ',
     text: `
 ご用件: ${inquiry}
