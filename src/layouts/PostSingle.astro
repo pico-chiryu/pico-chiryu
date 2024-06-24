@@ -17,11 +17,11 @@ const { title, description, authors, categories, image, date, tags } =
   post.data;
 ---
 
-<section class="section">
+<section class="section mt-3">
   <div class="container">
     <article class="row justify-center">
       <div class="md:col-10 text-center">
-        <h1 set:html={markdownify(title)} class="h2" />
+        <h1 set:html={markdownify(title)} class="h3" />
         <ul class="mt-4 flex flex-wrap items-center justify-center text-text">
           <li class="mx-3">
             {
