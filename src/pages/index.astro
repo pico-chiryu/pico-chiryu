@@ -19,15 +19,12 @@ import AdmissionFlow from '@/components/AdmissionFlow';
 import Greeting from '@/components/Greeting';
 import Home from '@/components/Home';
 
-
-
-
-
 // ...
 const posts = await getSinglePage("posts");
 const sortedPosts = sortByDate(posts);
 const totalPages = Math.ceil(posts.length / config.settings.pagination);
-const currentPosts = sortedPosts.slice(0, config.settings.pagination);
+// const currentPosts = sortedPosts.slice(0, config.settings.pagination); // ここを変更
+const currentPosts = sortedPosts.slice(0, 1); // 最新の1件のみを取得
 ---
 
 <Base>
@@ -52,19 +49,17 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
      
       <Greeting />
       <AdmissionFlow />
-
-
    
-      
-      
-
       <Posts posts={currentPosts} className="mb-16" />
-      <Pagination currentPage={1} totalPages={totalPages} />
+      <!-- Paginationは必要ないのでコメントアウト -->
+      <!-- <Pagination currentPage={1} totalPages={totalPages} /> -->
       <div>
         <GoogleMapComponent client:load />
       </div>
     </div>
   </section>
+</Base>
+
 
   
   
