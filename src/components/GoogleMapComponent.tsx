@@ -16,7 +16,7 @@ const GoogleMapComponent = () => {
         <h2 className="text-xl font-semibold mb-2">教室までの地図</h2>
         <div className="h-1 bg-customGreen w-full mb-6"></div>
       </div>
-      <LoadScript googleMapsApiKey="AIzaSyAIl5EuEGf-iIhgxAWdz2B18bTsRdkKzX8">
+      <LoadScript googleMapsApiKey="AIzaSyDqAEltZB0OOCXxm25kotZDeTqGi26Utfg">
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={16}>
           <Marker position={center} />
           <OverlayView
