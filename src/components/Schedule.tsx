@@ -3,14 +3,14 @@ import React from 'react';
 const Schedule = () => {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-6 text-[#01AD9F]">おけいこスケジュール</h1>
+      <h1 className="text-3xl font-bold mb-6 text-[#01AD9F]">おけいこスケジュール</h1>
       
       <p className="mb-8 text-lg">
-        お子様の成長をサポートする定期的なおけいこを開催しています。
+        お子様の成長をサポートする定期的なおけいこを実施しています。
       </p>
 
       <div className="bg-white shadow-md rounded-lg p-6 mb-8">
-        <h2 className="text-2xl font-bold mb-4 text-[#01AD9F]">開催日時</h2>
+        <h2 className="text-2xl font-bold mb-4 text-[#01AD9F]">おけいこの日時</h2>
         <table className="w-full border-collapse">
           <thead>
             <tr className="bg-[#01AD9F] text-white">
