@@ -65,7 +65,15 @@ const currentPosts = sortedPosts.slice(0, 1); // 最新の1件のみを取得
   
   <FixedBottomBanner id="fixedBottomBanner" />
   <script type="module" src="/scripts/fixedBannerControl.js"></script>
-  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3EQZTFHZ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-V3EQZTFHZ5');
+</script>
 </Base>
 
 
