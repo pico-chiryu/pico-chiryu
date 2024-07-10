@@ -8,6 +8,10 @@
       "name": "お問い合わせ",
       "url": "/contact-form"
     },
+    {
+      "name": "おけいこスケジュール",
+      "url": "/schedule"
+    },
     
     {
       "name": "ページ一覧",
