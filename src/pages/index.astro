@@ -24,7 +24,7 @@ const posts = await getSinglePage("posts");
 const sortedPosts = sortByDate(posts);
 const totalPages = Math.ceil(posts.length / config.settings.pagination);
 // const currentPosts = sortedPosts.slice(0, config.settings.pagination); // ここを変更
-const currentPosts = sortedPosts.slice(0, 1); // 最新の1件のみを取得
+const currentPosts = sortedPosts.slice(0, 3); // 最新3件を取得
 ---
 
 <Base>
@@ -50,7 +50,7 @@ const currentPosts = sortedPosts.slice(0, 1); // 最新の1件のみを取得
       <Greeting />
       <AdmissionFlow />
    
-      <Posts posts={currentPosts} className="mb-16" />
+      <Posts posts={currentPosts} className="mb-16" fluid={false} />
       <!-- Paginationは必要ないのでコメントアウト -->
       <!-- <Pagination currentPage={1} totalPages={totalPages} /> -->
       <div>
