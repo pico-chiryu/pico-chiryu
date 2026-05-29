@@ -14,7 +14,7 @@ const recentPosts = sortedPosts.slice(0, 3);
   <Home client:only="react" />
   <section class="section">
     <div class="container">
-      <Posts posts={recentPosts} />
+      <Posts posts={recentPosts} fluid={false} />
       <div class="text-center mt-8">
         <a
           href="/blog"
