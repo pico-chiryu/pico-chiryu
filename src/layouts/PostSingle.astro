@@ -13,7 +13,7 @@ const posts = await getSinglePage("posts");
 const { post } = Astro.props;
 const similarPosts = similerItems(post, posts, post.slug);
 const { Content } = await post.render();
-const { title, description, authors, categories, image, date, tags } =
+const { title, description, authors, categories, image, image_link, date, tags } =
   post.data;
 ---
 
@@ -79,15 +79,26 @@ const { title, description, authors, categories, image, date, tags } =
 
       <div class="col-12 mt-8 mb-2">
         {
-          image && (
-            <Image
-              src={image}
-              height={500}
-              width={1000}
-              alt={title}
-              class="rounded-lg"
-            />
-          )
+          image &&
+            (image_link ? (
+              <a href={image_link}>
+                <Image
+                  src={image}
+                  height={500}
+                  width={1000}
+                  alt={title}
+                  class="rounded-lg"
+                />
+              </a>
+            ) : (
+              <Image
+                src={image}
+                height={500}
+                width={1000}
+                alt={title}
+                class="rounded-lg"
+              />
+            ))
         }
       </div>
 
