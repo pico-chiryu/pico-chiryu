@@ -1,10 +1,28 @@
 ---
 import Base from "@/layouts/Base.astro";
 import Home from "@/components/Home";
+import Posts from "@/layouts/Posts.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
+import { sortByDate } from "@/lib/utils/sortFunctions";
+
+const posts = await getSinglePage("posts");
+const sortedPosts = sortByDate(posts);
+const recentPosts = sortedPosts.slice(0, 3);
 ---
 
 <Base title="Home">
   <Home client:only="react" />
+  <section class="section">
+    <div class="container">
+      <Posts posts={recentPosts} />
+      <div class="text-center mt-8">
+        <a
+          href="/blog"
+          class="bg-[#01AD9F] text-white px-6 py-3 rounded-full shadow-lg font-semibold hover:bg-[#018E82] transition-colors duration-200 inline-block"
+        >
+          すべての記事を見る
+        </a>
+      </div>
+    </div>
+  </section>
 </Base>
-
-
