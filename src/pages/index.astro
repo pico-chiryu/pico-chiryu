@@ -18,6 +18,7 @@ import Canvas from '@/components/Canvas';
 import AdmissionFlow from '@/components/AdmissionFlow';
 import Greeting from '@/components/Greeting';
 import Home from '@/components/Home';
+import HomeBanner from '@/layouts/components/HomeBanner.astro';
 
 // ...
 const posts = await getSinglePage("posts");
@@ -40,7 +41,9 @@ const currentPosts = sortedPosts.slice(0, 3); // 最新3件を取得
         </Suspense>
       </Canvas> -->
       <!-- <Canvas client:only="react" /> -->
-      <Home client:only="react" />
+      {/* ▼ ヒーロー：バナー画像版（現行）。3D に戻す場合は下の <Home> のコメントを解除して、この <HomeBanner /> をコメントアウト */}
+      <HomeBanner />
+      {/* <Home client:only="react" /> */}
     
       <!-- <Slider client:load /> -->
       <!-- <TestButton client:load/>

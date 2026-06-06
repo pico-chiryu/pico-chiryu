@@ -1,0 +1,44 @@
+---
+// トップページのヒーローバナー（3D ホームの差し替え）
+// 元の 3D 表示に戻したいときは index.astro 側で <HomeBanner /> をコメントアウトし
+// <Home client:only="react" /> のコメントを解除するだけで戻る。
+const bannerSrc = "/images/soroban_chiryu_image.jpg";
+---
+
+<section class="home-banner py-4 sm:py-8">
+  <div class="mx-auto w-full max-w-3xl px-2 sm:px-0">
+    <!-- バナー画像 -->
+    <div
+      class="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5"
+    >
+      <img
+        src={bannerSrc}
+        alt="知立市のそろばん教室 - 子どもたちの「できた！」を育てます"
+        width="1536"
+        height="1024"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="block w-full h-auto"
+      />
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-5 sm:mt-7 flex flex-col items-center gap-3 text-center">
+      <span
+        class="inline-block bg-yellow-400 text-[#215364] text-xs sm:text-sm font-bold px-3 py-1 rounded-full shadow-sm"
+      >
+        新規開校！無料体験 受付中
+      </span>
+      <p class="text-base sm:text-lg text-[#215364] font-semibold leading-snug">
+        受験に役立つ一生モノの絶対暗算力！
+      </p>
+      <a
+        href="/contact-form"
+        class="inline-block bg-[#01AD9F] hover:bg-[#018E82] text-white text-base sm:text-lg font-bold px-8 py-3 rounded-full shadow-lg transition-colors duration-200"
+      >
+        無料体験はこちら！
+      </a>
+    </div>
+  </div>
+</section>
